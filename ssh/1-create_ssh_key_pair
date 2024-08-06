@@ -1,5 +1,3 @@
-#!/usr/bin/env bash 
-#removing the password requirement
-Host *
-	IdentifyFile ~/.ssh/school
-	PasswordAuthentication no
+#!/usr/bin/env bash
+#creating RSA key pairs
+ssh-keygen -t rsa -b 4096 -f school -N betty
