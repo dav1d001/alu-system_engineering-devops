@@ -1,24 +1,5 @@
-#!/usr/bin/env bash
-# The name of the private key
-key_filename="school"
-
-# The number of bits in the key
-key_bits=4096
-
-# The passphrase for the key
-passphrase="betty"
-
-# Generate RSA key pair with passphrase
-ssh-keygen -t rsa -b $key_bits -f $key_filename -N "$passphrase"
-
-# Display success message
-echo "Generating public/private rsa key pair."
-echo "Your identification has been saved in $key_filename."
-echo "Your public key has been saved in $key_filename.pub."
-echo "The key fingerprint is:"
-ssh-keygen -lf $key_filename
-echo "The key's randomart image is:"
-ssh-keygen -l -v -f $key_filename
-
-# List the current directory
-ls
+#!/usr/bin/env bash 
+#removing the password requirement
+Host *
+	IdentifyFile ~/.ssh/school
+	PasswordAuthentication no
